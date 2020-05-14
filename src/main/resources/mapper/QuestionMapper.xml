@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.fast.model.mapper.QuestionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.springboot.fast.model.bean.Question">
+        <id column="id" property="id" />
+        <result column="type" property="type" />
+        <result column="title" property="title" />
+        <result column="option_a" property="optionA" />
+        <result column="option_b" property="optionB" />
+        <result column="option_c" property="optionC" />
+        <result column="option_d" property="optionD" />
+        <result column="answer" property="answer" />
+        <result column="analyse" property="analyse" />
+        <result column="score" property="score" />
+        <result column="create_by" property="createBy" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="update_by" property="updateBy" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+    <select id="selectByQuestion" resultType="com.springboot.fast.model.bean.Question">
+        select  * from question
+        where
+        <foreach collection="list" separator=" and " item="word">
+            title like concat('%',#{word}, '%')
+        </foreach>
+    </select>
+
+</mapper>
