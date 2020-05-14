@@ -1,6 +1,9 @@
-# springboot-fast
-使用技术:
-springboot + shiro + mybatisplus + bootstrap + layui
 
-系统使用mybatisplus进行代码自动生成
+#使用到的工具
+相似度计算: https://github.com/shibing624/similarity
+
+分词：https://github.com/NLPchina/ansj_seg
+
+
+
 
